@@ -76,7 +76,7 @@ function respond() {
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("http://daddyleagues.com/mcf/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/amlob/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   
@@ -108,14 +108,14 @@ function respond() {
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
     
-    postMessage("http://daddyleagues.com/mcf/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/amlob/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/mcf/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/amlob/players?name="+rep+"&position=all&team=all");
     
     this.res.end();
   }  
@@ -162,7 +162,7 @@ function respond() {
   }
   else if(request.text && botRegexTrade.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/forms/d/e/1FAIpQLSdrbe5iBRaBC7EWoodVm8z6285-dG2EdHXAOMOgz8md8T1jwQ/viewform");
+    postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit#gid=672510654");
     this.res.end();
   }
   
