@@ -5,9 +5,9 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/; botRegexrRules = /^\/rules/; botRegexSchedule = /^\/schedule/; 
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/;
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/schedule/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
       botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
@@ -95,12 +95,7 @@ function respond() {
     postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
     this.res.end();
   }
-  else if(request.text && botRegexrRules.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/AMLoB/rules");
-    this.res.end();
-  } 
-  else if(request.text && botRegexgamerules.test(request.text)) {
+  else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://www.daddyleagues.com/AMLoB/rules");
     this.res.end();
@@ -112,6 +107,7 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
+    
     postMessage("http://daddyleagues.com/amlob/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
@@ -134,11 +130,6 @@ function respond() {
     postMessage("http://www.reddit.com/r/maddenall32");
     this.res.end();
   } 
-  else if(request.text && botRegexSchedule.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/AMLoB/schedules");
-    this.res.end();
-  } 
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
     postMessage("¯\\_(ツ)_/¯");
@@ -146,7 +137,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1zRLaUZ12vUOORFdNQbPCzJW5T0zFBrkth_osH9b7d34/edit?usp=drivesdk");
+    postMessage("https://www.daddyleagues.com/AMLoB/schedules");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -171,9 +162,11 @@ function respond() {
   }
   else if(request.text && botRegexTrade.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit#gid=672510654");
+   // postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit#gid=936958530");
+    postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit?usp=sharing);
     this.res.end();
   }
+  
   
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
