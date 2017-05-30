@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/; botRegexRules = /^\/gamerules/
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/; botRegexRules = /^\/gamerules/; botRegexSchedule = /^\/schedule/; 
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
@@ -112,7 +112,6 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    
     postMessage("http://daddyleagues.com/amlob/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
@@ -133,6 +132,11 @@ function respond() {
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.reddit.com/r/maddenall32");
+    this.res.end();
+  } 
+  else if(request.text && botRegexSchedule.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.daddyleagues.com/AMLoB/schedules");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
