@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/; botRegexRules2 = /^\/rules /;
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/schedule/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
@@ -96,6 +96,11 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.daddyleagues.com/AMLoB/rules");
+    this.res.end();
+  } 
+    else if(request.text && botRegexRules2.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://www.daddyleagues.com/AMLoB/rules");
     this.res.end();
