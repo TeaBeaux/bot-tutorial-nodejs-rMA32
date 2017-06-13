@@ -5,9 +5,9 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/schedule/; botRegexCC = /^\/cc/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
       botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
@@ -99,7 +99,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://www.daddyleagues.com/AMLoB/rules");
     this.res.end();
-
+  } 
   else if(request.text && botRegexGTA.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
@@ -137,7 +137,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/AMLoB/schedules");
+    postMessage("https://docs.google.com/spreadsheets/d/1zRLaUZ12vUOORFdNQbPCzJW5T0zFBrkth_osH9b7d34/edit?usp=drivesdk");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -162,11 +162,9 @@ function respond() {
   }
   else if(request.text && botRegexTrade.test(request.text)) {
     this.res.writeHead(200);
-   // postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit#gid=936958530");
-    postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit?usp=sharing);
+    postMessage("https://docs.google.com/spreadsheets/d/1jM6qqyM4OrZng2_1YFlkbZVGG0F3veBoYuyhMT_-8rs/edit#gid=672510654");
     this.res.end();
   }
-  
   
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
